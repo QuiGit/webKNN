@@ -1,0 +1,140 @@
+﻿
+@{
+    ViewBag.Title = "ĐThu-Khoa Ngoại Ngữ";
+    Layout = "~/Views/Layout/_LayoutHome.cshtml";
+}
+@using DEMONEW.Models;
+
+<div class="banner-banner">
+    <div class="banner1">
+        @foreach (PageItem item in ((ViewBag.pages) as IEnumerable<PageItem>))
+         {
+             <h1>@Html.ActionLink(item.Title, "ViewNewsShow", new { id = item.ID_P })</h1>
+             <p>@Html.Raw(item.Sumary)</p>
+             
+         }
+    </div>
+    <div class="banner2">
+            @foreach (PageItem item in ((ViewBag.homes) as IEnumerable<PageItem>))
+            {
+                  <div class="img-bn2"><img src="~/Uploads/Images/@item.Image" /></div>
+                  <div class="ct-bn2">
+                       <h1>@Html.ActionLink(item.Title, "ViewNewsShow", new { id = item.ID_P })</h1>
+                       <p>@Html.Raw(item.Sumary)</p><br />
+                  </div>
+            }
+    </div>
+    <div class="banner3">
+        <h1>CHUYÊN NGÀNH ĐÀO TẠO</h1>
+        <ul class="banner3-1">
+            <li>
+                @foreach (PageItem item in ((ViewBag.sptas) as IEnumerable<PageItem>))
+                {
+                    <img src="~/Uploads/Images/@item.Image" />
+                    <h3>@Html.ActionLink(item.Title, "ViewNewsShow", new { id = item.ID_P })</h3>
+                }
+            </li>
+            <li>
+                @foreach (PageItem item in ((ViewBag.nnas) as IEnumerable<PageItem>))
+                {
+                    <img src="~/Uploads/Images/@item.Image" />
+                    <h3>@Html.ActionLink(item.Title, "ViewNewsShow", new { id = item.ID_P })</h3>
+                }
+            </li>
+            <li>
+                @foreach (PageItem item in ((ViewBag.nntqs) as IEnumerable<PageItem>))
+                {
+                    <img src="~/Uploads/Images/@item.Image" />
+                    <h3>@Html.ActionLink(item.Title, "ViewNewsShow", new { id = item.ID_P })</h3>
+                }
+            </li>
+        </ul>
+    </div>
+    
+</div>
+<div class="banner4">
+    <h1>TIN TỨC & SỰ KIỆN</h1>
+    <hr style="width: 70px; margin: auto; margin-bottom: 20px; color: #0066CC" />
+    <div class="banner4-1">
+        @foreach (PageItem item in ((ViewBag.page) as IEnumerable<PageItem>))
+        {
+            <div>
+                <table>
+                    <tr>
+                        <td class="img-bn4">
+                            <img src="~/Uploads/Images/@item.Image" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="title-bn4">
+                            <h3>@Html.ActionLink(item.Title, "ViewNewsShow", new { id = item.ID_P })</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="sumary-bn4">
+                            <p>@Html.Raw(item.Sumary)</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        }
+    </div>
+    <h4><a href="http://localhost:49470/Home/News">
+            Xem thêm <i class='fas fa-share'></i>
+        </a></h4>
+    <h1 style="margin-top:20px">CÁC HÌNH ẢNH HOẠT ĐỘNG & TIN TỨC</h1>
+    <div class="banner4-2">
+        <table>
+            <tr>
+                <td>
+                    <img src="~/Uploads/Images/englishteaching.jpg" />
+
+                </td>
+                <td>
+                    <img src="~/Uploads/Images/gala.jpg" />
+
+                </td>
+                <td>
+                    <img src="~/Uploads/Images/gala1.jpg" />
+
+                </td>
+                <td>
+                    <img src="~/Uploads/Images/galanight.jpg" />
+
+                </td>
+                <td>
+                    <img src="~/Uploads/Images/hdnghethuat.jpg" />
+
+                </td>
+                <td>
+
+                    <img src="~/Uploads/Images/hdnghethuat1.jpg" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="~/Uploads/Images/hdnghethuat1.jpg" />
+
+                </td>
+                <td>
+
+                    <img src="~/Uploads/Images/hdnghethuat2.jpg" />
+                </td>
+                <td>
+
+                    <img src="~/Uploads/Images/hdtet.jpg" />
+                </td>
+                <td>
+
+                    <img src="~/Uploads/Images/romary.jpg" />
+                </td>
+                <td>
+                    <img src="~/Uploads/Images/hd1.jpg" />
+                </td>
+                <td>
+                    <img src="~/Uploads/Images/hd2.jpg" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

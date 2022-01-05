@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Admin Login";
+    Layout = "~/Views/Layout/_LayoutLogin.cshtml";
+}
+<div class="login1">
+    <h1>ĐĂNG NHẬP HỆ THỐNG</h1>
+    @using (Html.BeginForm("Login", "Admin"))
+    {
+        <div class="user">
+            <div><i class="fas fa-user"></i></div>
+            <div>
+                @Html.TextBox("Username")
+            </div>
+        </div>
+        <div class="pass">
+            <div><i class="fas fa-lock"></i></div>
+            <div>
+                @Html.Password("Password")
+            </div>
+        </div>
+        <div class="dn">
+            <button type="submit" onclick="return checkNull();">Đăng nhập</button>
+            <br /><br />
+            <span class="note">@Html.Raw(ViewBag.Message)</span>
+        </div>
+       
+    }
+</div>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Uploads/Images/logo-header.png" rel="icon" />
+    <title>@ViewBag.Title</title>
+    <link href="~/CSS/admin.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fontawesome.com/icons?d=gallery&m=free">
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/MicrosoftAjax.debug.js"></script>
+    <script src="~/Scripts/MicrosoftAjax.js"></script>
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script src="~/Scripts/ckeditor/styles.js"></script>
+    <script src="~/Scripts/ckfinder/ckfinder.js"></script>
+</head>
+<body>
+    <div class="top">
+        <h1>HỆ THỐNG CÀI ĐẶT WEBSITE</h1>
+    </div>
+    <div class="content">
+        <div class="content1">
+            <ul>
+                <li class="user">
+                    <div>
+                        <i class="fas fa-user-cog"></i>
+                        <br />
+                        <p>@Session["username"].ToString()</p>
+                    </div>
+                </li>
+                <li>@Html.ActionLink("Home","Index","Home")</li>
+                <li>@Html.ActionLink("Menu","MenuList")</li>
+                <li>@Html.ActionLink("PageItem","PageList")</li>
+                <li>@Html.ActionLink("Account","AccList")</li>
+                <li>@Html.ActionLink("Logout","Logout")</li>
+            </ul>
+        </div>
+        <div class="content2">
+            @RenderBody()
+        </div>
+    </div>
+    <div class="bottom">
+        <p> Tài khoản: @Session["username"].ToString() - Quyền: @Session["permission"].ToString()</p>
+        <br />
+        @RenderSection("SecBottom", false)
+    </div>
+</body>
+</html>

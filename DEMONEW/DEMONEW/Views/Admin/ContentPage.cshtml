@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Admin ContentPage";
+    Layout = "~/Views/Layout/LayoutAdmin.cshtml";
+}
+@model DEMONEW.Models.PageItem
+<div class="content-data">
+    <div class="contentedit">
+        @using (Html.BeginForm("ContentPage", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <textarea class="ckeditor" cols="80" id="editor1" name="editor1" rows="7">
+                         @Html.Raw(Model.Contents)
+            </textarea>
+            <input type="submit" value="OK" />
+            <br /> <br />
+            <h4 class="trove">@Html.ActionLink("Trở về", "PageList", new { @class = "link" })</h4>
+        }
+    </div>
+</div>
+

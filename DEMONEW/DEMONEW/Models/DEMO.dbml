@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataWeb" Class="DEMODataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-RPNTHEA\SQLEXPRESS;Initial Catalog=DataWeb;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DataWebConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Accounts" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="Username" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Fullname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Permission" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Lock" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Account_Menus" Member="Menus" ThisKey="Username" OtherKey="UserAdd" Type="Menus" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Menus" Member="Menus">
+    <Type Name="Menus">
+      <Column Name="ID_MN" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Parent" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Pos" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Lable" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="UrlLink" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="OrderKey" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="UserAdd" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserTest" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Hide" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Menus_PageItem" Member="PageItems" ThisKey="ID_MN" OtherKey="ID_MN" Type="PageItem" />
+      <Association Name="Account_Menus" Member="Account" ThisKey="UserAdd" OtherKey="Username" Type="Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PageItems" Member="PageItems">
+    <Type Name="PageItem">
+      <Column Name="ID_P" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_MN" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Sumary" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Contents" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CreaDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ModiDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="OrderKey" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="UserAdd" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserTest" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Hide" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Menus_PageItem" Member="Menus" ThisKey="ID_MN" OtherKey="ID_MN" Type="Menus" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

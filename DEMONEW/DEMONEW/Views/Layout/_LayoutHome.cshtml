@@ -1,0 +1,99 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Uploads/Images/logo-header.png" rel="icon" />
+    <title>@ViewBag.Title</title>
+    <link href="~/CSS/home.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop()) {
+                    $('header').addClass('sticky');
+                } else {
+                    $('header').removeClass('sticky');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="myBtn" title="Lên đầu trang"> 
+        <img src="~/Uploads/Images/backtotop.jpg" />
+    </button>
+    <script>
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+
+        document.getElementById('myBtn').addEventListener("click", function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    </script>
+    <header>
+        <div class="top">
+            <div class="topheader">
+                <div class="logo">
+                    <a href="http://localhost:49470/Home/Index"><img src="~/Uploads/Images/logonn.jpg" /></a>
+                </div>
+                <div class="toptop">
+                    <div class="menu">
+                        @Html.Raw(Session["menushow"])
+                    </div>
+                    <div class="toptop1">
+                        <div>
+                            <a href="http://localhost:49470/Home/ViewNewsShow/53">
+                                <p class="p1">LỊCH</p>
+                                <p class="p2">KHAI GIẢNG</p>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="http://localhost:49470/Home/ViewNewsShow/51">
+                                <p class="p1">BÍ QUYẾT</p>
+                                <p class="p2">HỌC TIẾNG ANH</p>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="http://localhost:49470/Home/ViewNewsShow/52">
+                                <p class="p1">BÍ QUYẾT</p>
+                                <p class="p2">HỌC TIẾNG TRUNG</p> 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <hr style="height:5px" />
+    <div class="banner">
+        <div>@RenderBody()</div>
+        <div class="bottom">
+            <div class="bottom1">
+                <h2>THÔNG TIN LIÊN HỆ</h2>
+                <ul>
+                    <li><h3>KHOA NGOẠI NGỮ</h3></li>
+                    <li>
+                        <p>783 Phạm Hữu Lầu Phường 6, thành phố Cao Lãnh Tỉnh Đồng Tháp</p>
+                    </li>
+                    <li><p>SĐT: 0277.3881 715</p> </li>
+                </ul>
+                <a href="https://www.facebook.com/FLF-DThU-114246379992969/?ref=page_internal"><i class="fab fa-facebook-square"></i></a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

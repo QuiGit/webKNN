@@ -1,0 +1,307 @@
+﻿*{
+    margin:0;
+    padding:0
+}
+body {
+    font-size:15px;
+}
+.top {
+    width: 1200px;
+    height: 100px;
+    background: #000080;
+    margin: auto;
+    border-bottom: 2px solid #0F00FF;
+}
+.top h1{
+    color:#F2FFE9;
+    padding:30px 20px;
+    text-align:center;
+}
+.user{
+    height:130px;
+}
+.user div{
+    width:100px;
+    margin:auto;
+}
+.user i{
+    font-size:80px;
+    color:#000080;
+    padding:5px;
+}
+.user p{
+    font-size:20px;
+    color:red;
+}
+.content{
+    width:1200px;
+    height:500px;
+    margin:auto;
+    display:flex;
+}
+.content1 {
+    width: 200px;
+    height: 500px;
+    background: #1C6DD0;
+}
+.content1 li{
+    list-style:none;
+    line-height:40px;
+    border-bottom:1px solid #F5F5F5;
+}
+.content1 a{
+    text-decoration:none;
+    color:#F2FFE9;
+    font-size:16px;
+    padding:10px 20px;
+}
+.content2 {
+    width: 1000px;
+    height: 500px;
+    background: #F5F5F5
+}
+.note{
+    color:red;
+}
+.content-data {
+    width: 980px;
+    height: 500px;
+    background: #fff;
+    margin-left: 10px;
+}
+.content-data h3 {
+    padding:10px 20px;
+    color:#000080;
+}
+.addicon {
+    font-size: 20px;
+    padding: 0 20px;
+}
+.addicon a{
+    color: #003399;
+}
+.menucha{
+    padding:10px;
+}
+.menucha select{
+    width:150px;
+    margin-left:10px;
+    font-size:15px;
+    color: #003399;
+}
+.menucha button{
+    font-size:15px;
+    width:50px;
+    color: #003399;
+}
+.list{
+    border-collapse:collapse;
+    width:950px;
+    margin-left:5px;
+    font-size:15px;
+}
+.list td{
+    border:1px solid #003399;
+    height:40px;
+}
+.idmn {
+    width: 30px;
+    text-align: center;
+    color: #003399;
+}
+.label a {
+    text-decoration: none;
+    color: #003399;
+    padding: 0px 5px;
+    font-size: 15px;
+}
+.urllink {
+    width: 150px;
+    padding: 0px 5px;
+    color: #003399;
+}
+.edit{
+    width: 20px;
+    text-align:center;
+}
+.edit a{
+    color:blue;
+    text-decoration:none
+
+}
+.delete {
+    width: 30px;
+    text-align:center;
+
+}
+.delete a{
+    color: red;
+
+}
+.view th {
+    width: 100px;
+    height: 30px;
+    color: #000080;
+}
+.view p {
+    color: #003399;
+    margin-left:10px;
+}
+.trove a {
+    color: #003399;
+    text-decoration: none;
+    padding:10px;
+}
+.add{
+    padding:0 10px;
+}
+.add input {
+    color: #003399;
+    margin-left:10px;
+}
+.add select{
+    width:150px;
+    margin-left:10px;
+    font-size:15px;
+    color: #003399;
+}
+.add tr{
+    line-height:30px;
+}
+.add button{
+    font-size:15px;
+    color: #003399;
+    margin-left:130px;
+}
+.add textarea{
+    width:880px;
+    height:100px;
+    margin-left:10px;
+    color: #003399;
+}
+.add td{
+    color: #000080;
+}
+#content_data {
+    width: 975px;
+    height: 440px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.title_page a {
+    text-decoration: none;
+    color: #003399;
+    padding: 0px 5px;
+}
+.img_page {
+    width: 30px;
+}
+.upload {
+    width: 20px;
+    font-size: 25px;
+    height: 10px;
+}
+.upload a{
+    color: #003399;
+}
+.edit{
+    width: 20px;
+    text-align:center;
+
+}
+.edit a{
+    color:blue;
+    text-decoration:none
+
+}
+.delete {
+    width: 30px;
+    text-align:center;
+
+}
+.delete a{
+    color: red;
+
+}
+.content_page{
+    width:20px;
+    text-align:center
+
+}
+.content_page a{
+    text-decoration:none;
+    color:#000080;
+
+}
+.search {
+    padding: 10px;
+    width:960px;
+    height: 30px;
+    border:2px solid #F5F5F5;
+}
+.search table{
+    width:500px;
+}
+.find{
+    width:270px;
+}
+.find input {
+    width:200px;
+    font-size: 15px;
+    color: #003399;
+}
+.find button {
+    width:50px;
+    font-size: 15px;
+    color: #003399;
+}
+.viewPage table {
+    width: 940px;
+    border: 1px solid #003399;
+}
+.viewPage th {
+    color: #000080;
+}
+.viewPage td {
+    height: 40px;
+    padding: 0 10px;
+    color: #003399;
+    border: 1px solid #003399;
+}
+.uploadimg div {
+    width: 200px;
+    font-size: 25px;
+    height: 10px;
+    margin-left:20px;
+}
+.uploadimg input{
+   margin-left:40px;
+}
+.ckeditor {
+    height: 500px;
+}
+
+.edit_acc td {
+    color: #003399;
+}
+.edit_acc input {
+    color: #003399;
+}
+.edit_acc button {
+    color: #003399;
+}
+.edit_acc select {
+    color: #003399;
+}
+.bottom {
+    width: 1200px;
+    height: 70px;
+    margin: auto;
+    background: #000080;
+    border-top: 2px solid #0F00FF;
+    color: #fff;
+}
+.bottom p{
+    padding:20px;
+    margin-left:180px;
+}

@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "ĐThu-Khoa Ngoại Ngữ";
+    Layout = "~/Views/Layout/_LayoutHomeContent.cshtml";
+}
+@using DEMONEW.Models;
+@model PagedList.IPagedList<DEMONEW.Models.PageItem>
+@using PagedList.Mvc;
+<div class="banner-banner">
+    <div style="height:200px"></div>
+    <div class="banner2">
+        <div class="banner2-1">
+            <div class="search-bn21">
+                @using (Html.BeginForm("FindNewsAll", "Home", FormMethod.Get))
+                {
+                    @Html.TextBox("KeyAll")
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                }
+            </div>
+            <h3>BÀI VIẾT MỚI </h3>
+                <div class="new-bn2">
+
+                     @foreach (var item in Model)
+                        {
+                            <p>@Html.ActionLink(item.Title, "ViewNewsShow", new { id = item.ID_P })</p>
+                        }
+                </div>
+        </div>
+        <div class="banner2-2">
+            @if (Model != null)
+            {
+                <div class="ctt-bn22">
+                    <table>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="img-bn22"><img src="~/Uploads/Images/@item.Image" /></td>
+                                <td class="tlsm-bn22">
+                                    <div>
+                                        @Html.ActionLink(item.Title, "ViewNewsShow", new { id = item.ID_P })
+                                        <br />
+                                        <p> @Html.Raw(item.Sumary)</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            }
+            <div class="tabPage">
+                @Html.PagedListPager(Model, page => Url.Action("News", new { id = page }))
+            </div>
+        </div>
+    </div>
+</div>

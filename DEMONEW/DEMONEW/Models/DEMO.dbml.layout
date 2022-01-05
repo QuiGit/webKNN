@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DEMO">
+  <DataContextMoniker Name="/DEMODataContext" />
+  <nestedChildShapes>
+    <classShape Id="5675b539-d1bb-4881-bebe-b0c43b5101f7" absoluteBounds="6, 1.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DEMODataContext/Account" />
+      <nestedChildShapes>
+        <elementListCompartment Id="16ed40eb-16e8-42ce-af11-ac1e28ba5cf7" absoluteBounds="6.015, 1.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0c44d295-cc8c-4de6-913d-e5b3056c0a71" absoluteBounds="3.25, 1.25, 2, 2.5401025390625">
+      <DataClassMoniker Name="/DEMODataContext/Menus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1c574b40-c85d-41fe-864e-bae94e4921d6" absoluteBounds="3.2649999999999997, 1.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6 : 2.32774983723958); (5.25 : 2.32774983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DEMODataContext/Account/Account_Menus" />
+      <nodes>
+        <classShapeMoniker Id="5675b539-d1bb-4881-bebe-b0c43b5101f7" />
+        <classShapeMoniker Id="0c44d295-cc8c-4de6-913d-e5b3056c0a71" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f32eeb06-7ea4-409c-a723-8effcf6cb4ea" absoluteBounds="0.625, 1, 2, 3.1170068359375">
+      <DataClassMoniker Name="/DEMODataContext/PageItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e177480-d7f6-4c6c-8e3d-0539d2682858" absoluteBounds="0.64000000000000012, 1.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.25 : 2.52005126953125); (2.625 : 2.52005126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DEMODataContext/Menus/Menus_PageItem" />
+      <nodes>
+        <classShapeMoniker Id="0c44d295-cc8c-4de6-913d-e5b3056c0a71" />
+        <classShapeMoniker Id="f32eeb06-7ea4-409c-a723-8effcf6cb4ea" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Admin Lock Account";
+    Layout = "~/Views/Layout/LayoutAdmin.cshtml";
+}
+@model DEMONEW.Models.Account
+<div class="content-data">
+        @using (Html.BeginForm("LockAcc", "Admin"))
+        {
+            <h3>True or False</h3>
+            <table class="edit_acc">
+                <tr>
+                    <td style="padding:10px">Lock:</td>
+                    <td>
+                        <select id='Lock' name='Lock'>
+                            <option>True</option>
+                            <option>False</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="trove">@Html.ActionLink("Trở về", "AccList", new { @class = "link" })</td>
+                    <td><button type="submit">OK</button></td>
+                </tr>
+            </table>
+        }
+    </div>
+

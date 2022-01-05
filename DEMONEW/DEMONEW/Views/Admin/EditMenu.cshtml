@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Admin Edit Menu";
+    Layout = "~/Views/Layout/LayoutAdmin.cshtml";
+}
+@model DEMONEW.Models.Menus
+<div class="content-data">
+    <div><h3>SỬA THÔNG TIN: @Html.DisplayFor(Model => Model.Lable) </h3></div>
+    @using (Html.BeginForm("EditMenu", "Admin"))
+    {
+        <table class="add">
+            <tr>
+                <td>ID_MN:</td>
+                <td><b>@Html.TextBoxFor(Model => Model.ID_MN)</b></td>
+            </tr>
+            <tr>
+                <td>Lable:</td>
+                <td><b>@Html.TextBoxFor(Model => Model.Lable)</b></td>
+            </tr>
+            <tr>
+                <td>Pos:</td>
+                <td><b>@Html.TextBoxFor(Model => Model.Pos)</b></td>
+            </tr>
+            <tr>
+                <td>Url:</td>
+                <td><b>@Html.TextBoxFor(Model => Model.UrlLink)</b></td>
+            </tr>
+            <tr>
+                <td>Menu cha:</td>
+                <td>@Html.DropDownList("ID_Parent", new SelectList(ViewBag.parents, "ID_MN", "Lable", ViewBag.parent))</td>
+
+            </tr>
+            <tr>
+                <td class="trove">@Html.ActionLink("Trở về", "MenuList", new { @class = "link" })</td>
+                <td><button type="submit">OK</button></td>
+            </tr>
+        </table>
+    }
+</div>
+

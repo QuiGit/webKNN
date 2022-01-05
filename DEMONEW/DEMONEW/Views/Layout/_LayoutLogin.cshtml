@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Uploads/Images/logo-header.png" rel="icon" />
+    <title>Login</title>
+    <link href="~/CSS/login.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script src="~/Scripts/ckeditor/styles.js"></script>
+    <script src="~/Scripts/ckfinder/ckfinder.js"></script>
+</head>
+<body>
+    <div class="login">
+        @RenderBody()
+    </div>
+    <div>@RenderSection("SecHotNews", false)</div>
+</body>
+</html>

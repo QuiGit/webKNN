@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Admin Edit PageItem";
+    Layout = "~/Views/Layout/LayoutAdmin.cshtml";
+}
+
+@model DEMONEW.Models.PageItem
+<div class="content-data">
+        <div><h3>SỬA THÔNG TIN: @Html.DisplayFor(Model => Model.Title) </h3></div>
+        @using (Html.BeginForm("EditPage", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <table class="add">
+                <tr>
+                    <td>TT:</td>
+                    <td><b>@Html.TextBoxFor(Model => Model.ID_P)</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.DropDownList("ID_Parent", new SelectList(ViewBag.parents, "ID_MN", "Lable", ViewBag.parent))</td>
+                </tr>
+                <tr>
+                    <td>Tiêu đề:</td>
+                    <td><b>@Html.TextArea("Title")</b></td>
+                </tr>
+                <tr>
+                    <td>Sumary:</td>
+                    <td><b>@Html.TextArea("Sumary")</b></td>
+                </tr>
+                <tr>
+                    <td class="trove">@Html.ActionLink("Trở về", "PageList", new { @class = "link" })</td>
+                    <td>
+                        <button type="submit">OK </button>
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+</div>
+
+

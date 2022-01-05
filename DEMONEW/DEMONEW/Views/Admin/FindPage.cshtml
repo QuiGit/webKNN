@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Admin Find PageItem";
+    Layout = "~/Views/Layout/LayoutAdmin.cshtml";
+}
+@using DEMONEW.Models;
+@model PagedList.IPagedList<DEMONEW.Models.PageItem>
+@using PagedList.Mvc;
+<div class="content-data">
+    <div class="search">
+        <table>
+            @using (Html.BeginForm("FindPage", "Admin", FormMethod.Get))
+            {
+
+                <tr>
+                    <td style="color:#003399;width:60px">Từ khóa</td>
+                    <td class="find">
+                        @Html.TextBox("KeyP")
+                        <button type="submit">Tìm</button>
+                    </td>
+                    <td class="addicon">@Html.ActionLink(" ", "AddPage",new { }, new { @class = "fas fa-plus-circle" })</td>
+                    <td class="addicon">@Html.ActionLink(" ", "PageList", new { }, new { @class = "fa fa-refresh" })</td>
+                </tr>
+            }
+        </table>
+
+    </div>
+    <div id="content_data">
+        @using (Html.BeginForm("PageList", "Admin"))
+        {
+            <table class="list">
+                <tr style="text-align: center; height: 35px; background: #003399;  color:#fff; margin: 10px 10px">
+                    <td><b>TT</b></td>
+                    <td><b>Tiêu đề</b></td>
+                    <td><b> </b></td>
+                    <td><b> </b></td>
+
+                    <td><b class="fa fa-upload"></b></td>
+                    <td><b class="fas fa-user-edit" style="color:#fff"></b></td>
+                    <td><b class="fas fa-times" style="color:red"></b></td>
+                </tr>
+                @foreach (var p in Model)
+                {
+                    <tr style="height:30px">
+                        <td style="width:35px;text-align:center">@p.ID_P</td>
+                        <td class="title_page">@Html.ActionLink(@p.Title, "ViewPage", new { id = p.ID_P }, new { @class = "Link" }) </td>
+                        <td class="content_page">@Html.ActionLink(" ", "ContentPage", new { id = p.ID_P }, new { @class = "fas fa-pen" })</td>
+                        <td class="img_page"><img style="width:30px;height:25px" src="~/Uploads/Images/@p.Image" /></td>
+                        <td class="upload">@Html.ActionLink(" ", "Uploads", new { id = p.ID_P }, new { @class = "fa fa-file-image" })</td>
+                        <td class="edit">@Html.ActionLink(" ", "EditPage", new { id = p.ID_P }, new { @class = "fas fa-edit" })</td>
+                        <td class="delete">
+                            @Html.ActionLink(" ", "DeletePage", new { id = p.ID_P }, new
+                       {
+                           @class = "fas fa-trash-alt",
+
+                           onclick = "return confirm('Xóa thiệt hong?');"
+                       })
+
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        }
+    </div>
+</div>

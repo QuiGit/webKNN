@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Admin Add PageItem";
+    Layout = "~/Views/Layout/LayoutAdmin.cshtml";
+}
+
+@model DEMONEW.Models.PageItem
+    <div class="content-data">
+        @using (Ajax.BeginForm("AddPage", new AjaxOptions { UpdateTargetId = "result", HttpMethod = "Post" }))
+        {
+            <table class="add">
+                <tr>
+                    <td>TT</td>
+                    <td><b>@Html.TextBox("ID_P", (Object)ViewBag.idpnew)</b></td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.DropDownList("ID_Parent", new SelectList(ViewBag.parents, "ID_MN", "Lable", ViewBag.parent), "Chọn menu")</td>
+
+                </tr>
+                <tr>
+                    <td>Tiêu đề</td>
+                    <td>
+                        @Html.TextArea("Title")
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sumary</td>
+                    <td>
+                        <b>@Html.TextArea("Sumary")</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="trove">@Html.ActionLink("Trở về", "PageList", new { @class = "link" })</td>
+                    <td class="note">
+                        <button type="submit">OK</button>
+                    </td>
+                </tr>
+            </table>
+            <div style="margin-left:70px"><b class="note"><span id="result"></span></b></div>
+        }
+    </div>
+
+

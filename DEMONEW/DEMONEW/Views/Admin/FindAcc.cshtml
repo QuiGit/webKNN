@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Admin Find Account";
+    Layout = "~/Views/Layout/LayoutAdmin.cshtml";
+}
+@using DEMONEW.Models;
+@model PagedList.IPagedList<DEMONEW.Models.Account>
+@using PagedList.Mvc;
+<div class="content-data">
+    <div class="search">
+        <table>
+            @using (Html.BeginForm("FindAcc", "Admin", FormMethod.Get))
+            {
+
+                <tr>
+                    <td style="color:#003399;width:60px">Từ khóa</td>
+                    <td class="find">
+                        @Html.TextBox("KeyAcc")
+                        <button type="submit">Tìm</button>
+                    </td>
+                    <td class="addicon">@Html.ActionLink(" ", "AddPage", new { }, new { @class = "fas fa-plus-circle" })</td>
+                    <td class="addicon">@Html.ActionLink(" ", "AccList", new { }, new { @class = "fa fa-refresh" })</td>
+                </tr>
+            }
+        </table>
+
+    </div>
+    <div id="content_data">
+        @using (Html.BeginForm("AccList"))
+        {
+            <table class="list" style="margin-left:15px">
+                <tr style="text-align: center; height: 35px; background: #000080;">
+                    <td><b>Username</b></td>
+                    <td><b>Fullname</b></td>
+                    <td><b>Permission</b></td>
+                    <td><b>Email</b></td>
+                    <td><b>Lock</b>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                @foreach (var a in Model)
+                {
+                    <tr>
+
+                        <td>@a.Username</td>
+                        <td>@a.Fullname</td>
+                        <td>@a.Permission</td>
+                        <td>@a.Email</td>
+                        <td>@a.Lock </td>
+                        <td class="edit">
+                            @Html.ActionLink(" ", "LockAcc", new { id = a.Username }, new { @class = "fas fa-lock" })
+                        </td>
+                        <td class="edit">@Html.ActionLink(" ", "ChangePass", new { id = a.Username }, new { @class = "fa fa-key" })</td>
+                        <td class="edit">@Html.ActionLink(" ", "EditAcc", new { id = a.Username }, new { @class = "fas fa-edit" })</td>
+                        <td class="edit">@Html.ActionLink(" ", "Reset", new { id = a.Username }, new { @class = "fas fa-sync" })</td>
+                    </tr>
+
+                }
+
+            </table>
+        }
+    </div>
+</div>
+

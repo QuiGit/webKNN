@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Admin ChangePass";
+    Layout = "~/Views/Layout/LayoutAdmin.cshtml";
+}
+@model DEMONEW.Models.Account
+<div class="content-data">
+        <h3>Vui lòng nhập PassWord muốn thay đổi</h3>
+    <div class="edit_acc">
+        @using (Html.BeginForm("ChangePass", "Admin"))
+        {
+            <table>
+                <tr>
+                    <td style="padding:10px">Pass:</td>
+                    <td><b>@Html.TextBox("Password")</b></td>
+                </tr>
+                <tr>
+                    <td class="trove">@Html.ActionLink("Trở về", "AccList", new { @class = "link" })</td>
+                    <td><button type="submit">OK</button></td>
+                </tr>
+            </table>
+        }
+    </div>
+</div>

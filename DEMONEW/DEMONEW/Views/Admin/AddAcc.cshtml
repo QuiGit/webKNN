@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Admin Add Account";
+    Layout = "~/Views/Layout/LayoutAdmin.cshtml";
+}
+@model DEMONEW.Models.Account
+    <div class="content-data">
+        @using (Ajax.BeginForm("AddAcc", new AjaxOptions { UpdateTargetId = "result", HttpMethod = "Post" }))
+        {
+            <table class="add">
+                <tr>
+                    <td>Username:</td>
+                    <td><b>@Html.TextBox("Username")</b></td>
+                </tr>
+                <tr>
+                    <td>Pass:</td>
+                    <td><b>@Html.TextBox("Password")</b></td>
+                </tr>
+                <tr>
+                    <td>Fullname:</td>
+                    <td><b>@Html.TextBox("Fullname")</b></td>
+                </tr>
+                <tr>
+                    <td>Permission:</td>
+                    <td><b>@Html.TextBox("Permission")</b></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><b>@Html.TextBox("Email")</b></td>
+                </tr>
+
+                <tr>
+                    <td class="trove">@Html.ActionLink("Trở về", "AccList", new { @class = "link" })</td>
+                    <td class="note">
+                        <button type="submit">OK</button>
+                    </td>
+                </tr>
+            </table>
+            <div style="margin-left:20px"><b class="note"><span id="result"></span></b></div>
+        }
+</div>
+

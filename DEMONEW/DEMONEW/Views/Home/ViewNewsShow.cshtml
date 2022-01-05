@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "ĐThu-Khoa Ngoại Ngữ";
+    Layout = "~/Views/Layout/_LayoutHomeContent.cshtml";
+    <script src="~/JS/sline.js"></script>
+}
+
+@using DEMONEW.Models;
+@model PageItem
+<div class="banner-banner">
+    <div class="banner1">
+        <h1>@Html.DisplayFor(Model => Model.Title)</h1>
+        <hr />
+    </div>
+    <div class="banner2">
+        <div class="banner2-1">
+            <div class="search-bn21">
+                @using (Html.BeginForm("FindNews", "Home", FormMethod.Get))
+                {
+                    @Html.TextBox("Key")
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                }
+            </div>
+            <h3>BÀI VIẾT MỚI</h3>
+            <div class="new-bn2">
+                @foreach (PageItem item in ((ViewBag.links) as IEnumerable<PageItem>))
+                {
+                    <p>@Html.ActionLink(item.Title, "ViewNewsShow", new { id = item.ID_P })</p>
+                }
+            </div>
+        </div>
+        <div class="banner2-2">
+            <div class="ct-bn22">@Html.Raw(Model.Contents)</div>
+        </div>
+    </div>
+</div>

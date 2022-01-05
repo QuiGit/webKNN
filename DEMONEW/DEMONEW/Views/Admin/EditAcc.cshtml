@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Admin Edit Account";
+    Layout = "~/Views/Layout/LayoutAdmin.cshtml";
+}
+@model DEMONEW.Models.Account
+<div class="content-data">
+        @using (Html.BeginForm("EditAcc", "Admin"))
+        {
+            <table class="edit_acc">
+                <tr>
+                    <td>Username:</td>
+                    <td><b>@Html.TextBoxFor(Model => Model.Username)</b></td>
+                </tr>
+
+                <tr>
+                    <td>Fullname:</td>
+                    <td><b>@Html.TextBoxFor(Model => Model.Fullname)</b></td>
+                </tr>
+                <tr>
+                    <td>Permission:</td>
+                    <td><b>@Html.TextBoxFor(Model => Model.Permission)</b></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><b>@Html.TextBoxFor(Model => Model.Email)</b></td>
+                </tr>
+                <tr>
+                    <td class="trove">@Html.ActionLink("Trở về", "AccList", new { @class = "link" })</td>
+                    <td><button type="submit">OK</button></td>
+                </tr>
+            </table>
+        }
+    </div>
+

@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Admin Menu";
+    Layout = "~/Views/Layout/LayoutAdmin.cshtml";
+}
+
+@using DEMONEW.Models;
+<div class="content-data">
+    @using (Html.BeginForm("MenuList", "Admin"))
+    {
+        <table class="menucha">
+            <tr>
+                <td>@Html.DropDownList("ID_MN", new SelectList(ViewBag.parents, "ID_MN", "Lable", ViewBag.parent), "Chọn menu")</td>
+                <td><button type="submit">Tìm</button></td>
+                <td class="addicon">@Html.ActionLink(" ", "AddMenu",new { }, new { @class = "fas fa-plus-circle" })</td>
+            </tr>
+        </table>
+        <table class="list" style="margin-left:15px">
+            <tr style="text-align: center; height: 35px; background: #000080; color:#fff">
+                <td><b>TT</b></td>
+                <td><b>Label</b></td>
+                <td><b>UrlLink</b></td>
+                <td></td>
+                <td></td>
+            </tr>
+            @foreach (Menus m in (ViewBag.menus) as IEnumerable<Menus>)
+            {
+                <tr>
+                    <td class="idmn">@m.ID_MN</td>
+                    <td class="label">@Html.ActionLink(m.Lable, "ViewMenu", new { id = m.ID_MN }, new { @class = "link" })</td>
+                    <td class="urllink">@m.UrlLink</td>
+                    <td class="edit">@Html.ActionLink(" ", "EditMenu", new { id = m.ID_MN }, new { @class = "fas fa-edit" })</td>
+                    <td class="delete">
+                        @Html.ActionLink(" ", "DeleteMenu", new { id = m.ID_MN }, new
+                           {
+                                @class = "fas fa-trash-alt",
+                            onclick = "return confirm('Xóa thiệt hông?');"
+                           })
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+</div>
+

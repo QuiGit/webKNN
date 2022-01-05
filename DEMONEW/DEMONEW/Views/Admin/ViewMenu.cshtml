@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Admin View Menu";
+    Layout = "~/Views/Layout/LayoutAdmin.cshtml";
+}
+@model DEMONEW.Models.Menus
+<div class="content-data">
+    <h3>Chi tiết: @Html.DisplayFor(Model => Model.Lable)</h3>
+    <div class="view">
+        <table>
+            <tr>
+                <th>TT:</th>
+                <td><p>@Html.DisplayFor(Model => Model.ID_MN)</p></td>
+            </tr>
+            <tr>
+                <th>Lable:</th>
+                <td><p>@Html.DisplayFor(Model => Model.Lable)</p></td>
+            </tr>
+            <tr>
+                <th>Pos:</th>
+                <td><p>@Html.DisplayFor(Model => Model.Pos)</p></td>
+
+            </tr>
+            <tr>
+                <th>Url:</th>
+                <td><p>@Html.DisplayFor(Model => Model.UrlLink)</p></td>
+            </tr>
+        </table>
+        <br />
+    </div>
+    <div class="trove">@Html.ActionLink("Trở về", "MenuList", new { @class = "link" })</div>
+</div>
